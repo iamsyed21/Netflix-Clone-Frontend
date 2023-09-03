@@ -1,0 +1,105 @@
+.navBox{
+    display: flex;
+    padding: 22px;
+    padding-bottom: 8px;
+    background: linear-gradient(180deg, #060606, #14141400);
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    height: 70px;
+}
+
+.scrolled{
+    background: #14141480;
+}
+
+.left{
+    color: aliceblue;
+    background: #ffffff00;
+    align-items:center;
+    padding-left: 30px;
+
+    span{
+        padding: 10px;
+        background: #ffffff00;
+        font-weight: 600;
+    }
+    span:hover{
+        color: gray;
+        cursor: pointer;
+        
+    }
+    img{
+        max-width: 100px;
+        margin-top: -10px;
+        background: #ffffff00;
+        margin-right: 40px;
+    }
+
+}
+
+.right{
+    padding-right: 40px;
+    background: #ffffff00;
+    margin-top: -2px;
+    align-content: center;
+    align-items:center;
+    img{
+        max-width: 50px;
+        margin-top: -10px;
+        background: #ffffff00;
+        margin-left: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.008);
+        border-radius: 16px;
+    }
+}
+
+.myNavIcons{
+    background: #ffffff00;
+    color: white;
+    align-items: center;
+    width: 44px;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.Carrot{
+    margin-left: -10px;
+}
+
+.profileDropDown{
+    background: #ffffff00;
+    cursor: pointer;
+
+    .options{
+        background-color: #141414;
+        padding: 8px 8px 8px 16px;
+        gap: 12px;
+        border: 1px solid gray;
+        border-radius: 4px;
+        flex-direction: column;
+        display: flex;
+        font-size: 18px;
+        font-weight: 500;
+        color: aliceblue;
+        display: none;
+    
+        span:hover{
+            text-decoration: underline;
+            color: red;
+        }
+    }
+
+    &:hover{
+        
+        .options{
+            display: flex;
+        }
+    }
+}
+

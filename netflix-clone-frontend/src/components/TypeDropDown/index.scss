@@ -1,0 +1,50 @@
+.typeContainer{
+    margin-top: 70px;
+    padding: 10px;
+    height: 80px;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+
+    .category{
+        font-size: 46px;
+        font-weight: 600;
+        color: aliceblue;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: 10px 20px;
+        margin-right: 10px;
+
+
+        .genre{
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 44px;
+            color: aliceblue;
+            padding: 2px 2px 4px 6px;
+            background-color: gray;
+            border: 1px solid white;
+            cursor: pointer;
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            .genreOption{
+                background-color: #141414;
+                cursor: pointer;
+               
+            }
+        }
+    }
+}
+
+.scrolled2{
+    background: #14141480;
+}
