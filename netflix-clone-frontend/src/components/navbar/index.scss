@@ -17,6 +17,11 @@
     background: #14141480;
 }
 
+.link{
+    text-decoration: none;
+    color: inherit;
+}
+
 .left{
     color: aliceblue;
     background: #ffffff00;
@@ -103,3 +108,35 @@
     }
 }
 
+.notificationDropDown {
+    background: #ffffff00;
+    cursor: pointer;
+
+    .notificationTray {
+        background-color: #403f3f;
+        padding: 8px 8px 8px 16px;
+        gap: 12px;
+        width: 400px;
+        min-height: 300px;
+        position: absolute;
+        border: 2px solid white;
+        border-radius: 12px 0px 12px 12px;
+        flex-direction: column;
+        display: none;
+        font-size: 18px;
+        right: 0;
+        margin-right: 12vw;
+        font-weight: 500;
+        color: aliceblue;
+        padding: 20px;
+    }
+
+    &:hover .notificationTray {
+        display: flex; // Show .notificationTray when .notificationDropDown is hovered
+    }
+
+    &:hover {
+        text-decoration: underline;
+        color: red;
+    }
+}

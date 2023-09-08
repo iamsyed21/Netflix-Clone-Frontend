@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: aqua;
+    background-color: black;
 
     img{
         width: 100%;
@@ -14,30 +14,32 @@
 }
 
 .info{
-    width: 450px;
+    width: 30vw;
     left: 0;
     margin-left: 80px;
     position: absolute;
     height: auto;
-    margin-top: 160px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #0e020240;
+    background-color: #0e020205;
     border-radius: 12px;
 
     img{
-        width: 90%;
+        width: 100%;
+        height: 150px;
         max-width: 300px;
         background-color: #ffffff00;
-        object-fit: cover;
+        object-fit: contain;
         padding: 10px;
+        padding-bottom: 0px;
     }
 
     .infoBox{
         background-color: #ffffff00;
         color: aliceblue;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 500;
         padding: 10px;
     }
@@ -101,4 +103,56 @@
             background-color: #ffffff00;
         }
     }
+}
+
+
+.typeContainer{
+    margin-top: 70px;
+    padding: 10px;
+    height: 80px;
+    padding-left: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+
+    .category{
+        font-size: 46px;
+        font-weight: 600;
+        color: aliceblue;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: 10px 20px;
+        margin-right: 10px;
+
+
+        .genre{
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 44px;
+            color: aliceblue;
+            padding: 2px 2px 4px 6px;
+            background-color: gray;
+            border: 1px solid white;
+            cursor: pointer;
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            .genreOption{
+                background-color: #141414;
+                cursor: pointer;
+               
+            }
+        }
+    }
+}
+
+.scrolled2{
+    background: #14141480;
 }

@@ -5,7 +5,7 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import ListItem from '../listItem';
 
 import './index.scss'
-const List = () => {
+const List = ({list}) => {
     const [slideNumber, setSliderNumber] = useState(0);
 
     const listContainerRef = useRef();
@@ -14,28 +14,21 @@ const List = () => {
         let distance= listContainerRef.current.getBoundingClientRect().x - 50;
         if(direction === "left" && slideNumber>0){
             setSliderNumber(slideNumber-1)
-            listContainerRef.current.style.transform = `translateX(${256+distance}px)`;
+            listContainerRef.current.style.transform = `translateX(${230 + distance}px)`;
         }else if(direction === "right" && slideNumber<5){
             setSliderNumber(slideNumber+1)
-            listContainerRef.current.style.transform = `translateX(${distance-255}px)`;
+            listContainerRef.current.style.transform = `translateX(${-230 + distance}px)`;
         }
     }
   return (
     <div className='list'>
-        <span className='listTile'> Continue Watching</span>
+        <span className='listTile'>{list.title}</span>
         <div className='wrapper'>
            {(slideNumber !==0) && <FontAwesomeIcon onClick={()=>handleNavigation("left")} className='navigationArrow left' icon={faAngleLeft}/>}
             <div className='ListContainer' ref={listContainerRef}>
-               <ListItem index={0}/>
-               <ListItem index={1}/>
-               <ListItem index={2}/>
-               <ListItem index={3}/>
-               <ListItem index={4}/>
-               <ListItem index={5}/>
-               <ListItem index={6}/>
-               <ListItem index={7}/>
-               <ListItem index={8}/>
-               <ListItem index={9}/>
+            {list.content.map((item, i) => (
+            <ListItem index={i} item={item} />
+          ))}
             </div>
            {(slideNumber !==5) &&  <FontAwesomeIcon onClick={()=>handleNavigation("right")} className='navigationArrow right' icon={faAngleRight}/>}
         </div>
