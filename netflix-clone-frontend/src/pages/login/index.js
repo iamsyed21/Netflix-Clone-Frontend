@@ -4,6 +4,7 @@ import { AuthContext } from "../../authContext/AuthContext"
 import {Link} from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import notflix from '../../resources/images/notflix.png';
+import Spinner from 'react-bootstrap/Spinner';
 
 import './index.scss';
 const Login = () => {
@@ -12,6 +13,7 @@ const Login = () => {
 
   const [email, setEmail] = useState("explorenotflix@definitelyrealmail.com");
   const [password, setPassword] = useState("notflixfakesure");
+  const [loading, setLoading] = useState(false);
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -40,6 +42,7 @@ const Login = () => {
     // Check the screen size when the component mounts
     if (windowWidth < 600) {
       setShouldRedirect(true);
+      
       navigate("/default");
     } else {
       setShouldRedirect(false);
@@ -47,10 +50,12 @@ const Login = () => {
   }, [windowWidth, navigate]);
 
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    login({ email, password }, dispatch);
-    navigate("/");
+    setLoading(true);
+   await login({ email, password }, dispatch);
+   setLoading(false);
+   navigate("/");
   };
   
   return (
@@ -89,6 +94,13 @@ const Login = () => {
         </div>
         <div className='col-12 col-md-6 mainLogin'>
         <div className="containerLogin">
+        {loading ? (  // New loading spinner
+            <div className="loadingBox">
+              <Spinner animation="border" role="status">
+              </Spinner>
+              <p>This website is hosted on the render free instance type ❤️, so 'Time to First Byte' may take a moment. Your patience is appreciated.</p>
+            </div>
+          ) : (
         <form>
           <h1>Sign In</h1>
           <input
@@ -115,6 +127,7 @@ const Login = () => {
             bot. <b>Learn more</b>.
           </small>
         </form>
+         )}
       </div>
         </div>
       </div>
